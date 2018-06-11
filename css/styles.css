@@ -1,0 +1,198 @@
+.landscape {
+  display: grid;
+  grid-template-columns: repeat(256, 4px);
+  grid-template-rows: repeat(256, 4px);
+  margin: auto;
+  background-image: url(../imgs/landscape.svg);
+  width: 1024px;
+  height: 1024px;
+}
+ .cycle-spinner {
+   grid-column: 115 / span 30;
+   grid-row: 5 / span 30;
+   background-image: url(../imgs/cycle.svg);
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
+   animation: spin 5s infinite linear;
+   z-index: 1;
+ }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+
+}
+.rain, .rain2, .rain3 {
+  transform: rotate(-25deg);
+  grid-column: 185 / span 30;
+  grid-row: 45 / span 30;
+  background-image: url(../imgs/raindrops.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: raining 2s infinite linear;
+}
+
+@keyframes raining {
+  0% {
+    opacity: 0;
+    transform: translateX(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-30px, 150px);
+  }
+}
+
+.rain2 {
+  transform: rotate(-25deg);
+  grid-column: 155 / span 30;
+  grid-row: 55 / span 30;
+}
+
+.rain3 {
+  transform: rotate(-25deg);
+  grid-column: 200 / span 30;
+  grid-row: 80 / span 30;
+}
+
+.evaporation, .evaporation1, .evaporation2, .evaporation3, .evaporation4  {
+
+  background-image: url(../imgs/evaporation.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: evaporating 3s linear infinite;
+
+}
+.evaporation {
+  grid-column: 25 / span 5;
+  grid-row: 200 /span 40;
+}
+
+.evaporation1 {
+  grid-column: 28 / span 5;
+  grid-row: 200 /span 40;
+}
+
+.evaporation2 {
+  grid-column: 31 / span 5;
+  grid-row: 200 /span 40;
+}
+
+.evaporation3 {
+  grid-column: 34 / span 5;
+  grid-row: 200 /span 40;
+}
+
+.evaporation4 {
+  grid-column: 37 / span 5;
+  grid-row: 200 / span 40;
+}
+
+@keyframes evaporating {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-600px);
+    opacity: 0;
+  }
+}
+
+.birdy {
+  grid-column: 28 / span 9;
+  grid-row: 20 /span 40;
+  background-image: url(../imgs/flip.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: flippy .5s linear infinite,
+              moveBird 4.5s linear infinite;
+
+}
+
+.birdy2 {
+  position: relative;
+  top: 4px;
+  grid-column: 28 / span 12;
+  grid-row: 20 /span 40;
+  background-image: url(../imgs/flap.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: flappy .5s linear infinite,
+              moveBird 4.5s linear infinite;
+}
+
+@keyframes flappy {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+
+}
+
+@keyframes flippy {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveBird {
+  0% {
+    transform: translateX(-200px);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateX(800px);
+  }
+}
+
+.clouds {
+  z-index: 1;
+  background-image: url(../imgs/clouds.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 165 / span 100;
+  grid-row: 1 /span 100;
+}
+
+.deadfish {
+  background-image: url(../imgs/deadfish.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-column: 10 / span 20;
+  grid-row: 250 /span 10;
+  animation: float 6s infinite linear;
+}
+
+@keyframes float {
+  0% {transform: translateX(0) translateY(0) rotateZ(0deg);}
+
+    60% {transform: translateX(40px) translateY(-150px) rotateZ(10deg);}
+    100% {opacity: 0; transform: translateX(-100px) translateY(-150px) rotateZ(10deg)}
+
+}
